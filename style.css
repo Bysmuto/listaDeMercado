@@ -1,80 +1,78 @@
+:root {
+  --ligthColor: rgb(243, 221, 216);
+  --darkColor: rgb(206, 115, 41);
+}
 
 body {
-  background-color: rgba(245, 111, 77, 0.089);
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: xx-large;
-  color: rgb(247, 235, 235);
+  background-color: #d6bba9;
 
   user-select: none;
+
+  font-size: xx-large;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-#box {
-  background-color: rgb(216, 206, 201);
+#app {
+  display: grid;
+  place-items: center;
+}
+
+#head {
+  background-color: var(--darkColor);
 
   display: grid;
   place-items: center;
 
-  width: 95%;
-  margin: auto;
-  margin-top: -2%;
-
-  border-radius: 15px;
-  box-shadow: -5px 5px 15px rgba(8, 5, 4, 0.315);
-}
-
-#box2 {
   width: 100%;
-  border-radius: 0px 0px 15px 15px;
 
   padding: 5%;
-  /* padding-bottom: 10%; */
-  background-color: rgb(173, 104, 47);
 
-  display: grid;
-  place-items: center;
+  border-radius: 0px 0px 40px 40px;
 }
 
 #title {
-  font-size: 180%;
+  font-size: 200%;
 }
 
 #input {
-  background-color: rgb(243, 221, 216);
-  box-shadow: 5px 5px 15px rgba(8, 5, 4, 0.329);
+  background-color: var(--ligthColor);
+  color: var(--darkColor);
 
+  width: 80%;
+
+  padding: 5%;
+  margin: 10%;
+
+  font-size: xx-large;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 
   border: none;
-  font-size: xx-large;
   border-radius: 20px;
-
-  color: rgb(173, 98, 37);
-
-  width: 80%;
-  padding: 5%;
-  margin: 10%;
 }
 
 #input:focus {
-    padding: 8%;
-  box-shadow: 5px 5px 15px rgba(8, 5, 4, 0.788);
+  padding: 8%;
+
   outline: none;
   border-radius: 50px;
-  box-shadow: 20px;
 }
 
 #itens {
-  width: 80%;
-  /* min-height: 100vh; */
+  background-color: var(--ligthColor);
+
+  width: 70%;
+  padding: 5%;
+
+  border-radius: 0px 0px 20px 20px;
 }
 
 #itens > * {
-  width: 90%;
-  border-radius: 15px;
-  /* text-shadow: 1px 1px 15px rgba(17, 34, 25, 0.281); */
-  /* box-shadow: 2px 2px 15px rgba(8, 5, 4, 0.644); */
+  color: var(--ligthColor);
+  background-color: var(--darkColor);
+
   padding: 4%;
+  padding-left: 5%;
   margin: 10% 0%;
-  color: rgb(231, 229, 228);
-  background-color: rgb(173, 98, 37);
+
+  border-radius: 15px;
 }
