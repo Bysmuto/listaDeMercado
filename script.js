@@ -35,17 +35,17 @@ function inputToDb() {
     if (event.key === "Enter") {
       event.preventDefault();
 
-      playSound("add",0.5);
+      playSound("add", 0.5);
 
       addItemDb(currentDb, inputHtml.value);
     } else {
-      playSound("inputTyping",0.3);
+      playSound("inputTyping", 0.3);
     }
   });
 
   //input sound
   inputHtml.addEventListener("click", () => {
-    playSound("input",0.08);
+    playSound("input", 0.08);
   });
 }
 
@@ -94,7 +94,7 @@ function addItemHtml(value, id) {
       e.onclick = (e) => {
         let idOfitem = e.currentTarget.id;
         removeItemDb(currentDb, idOfitem);
-        playSound("remove",0.5);
+        playSound("remove", 0.5);
       };
     });
   }
@@ -107,7 +107,7 @@ function runApp(db) {
   displayItens(db);
 }
 
-function playSound(sound,volume) {
+function playSound(sound, volume) {
 
   if (sound == "add") {
     let audio = new Audio("souds/add2.wav");
@@ -135,5 +135,3 @@ function playSound(sound,volume) {
 }
 
 runApp(currentDb);
-
-//teste git
