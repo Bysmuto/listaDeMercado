@@ -4,7 +4,7 @@
 }
 
 body {
-  background-color: #d6bba9;
+  background-color: #e6cdbd;
 
   user-select: none;
 
@@ -26,6 +26,7 @@ body {
   width: 100%;
 
   padding: 5%;
+  margin-top: -4%;
 
   border-radius: 0px 0px 40px 40px;
 }

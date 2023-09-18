@@ -26,7 +26,6 @@ let inputHtml = document.querySelector("#input");
 let itensHtml = document.querySelector("#itens");
 
 function addItemDb(path, value) {
-  console.log(inputHtml.value + " foi adicionado a " + currentDb);
 
   push(ref(db, path), value);
 }
@@ -53,7 +52,6 @@ function inputToDb() {
 function removeItemDb(path, id) {
   let itemToRemove = ref(db, `${path}/${id}`);
 
-  console.log(itemToRemove + " foi removido de " + currentDb);
 
   remove(itemToRemove);
 }
@@ -97,7 +95,6 @@ function addItemHtml(value, id) {
         let idOfitem = e.currentTarget.id;
         removeItemDb(currentDb, idOfitem);
         playSound("remove",0.5);
-        console.log(idOfitem + "was removed");
       };
     });
   }
