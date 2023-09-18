@@ -1,6 +1,6 @@
 :root {
   --ligthColor: rgb(243, 221, 216);
-  --darkColor: rgb(252, 152, 71);
+  --darkColor: rgb(255, 138, 43);
 }
 
 body {
@@ -32,6 +32,13 @@ body {
 
 #title {
   font-size: 200%;
+}
+
+#title img
+{
+  width: 70%;
+  margin: auto;
+  display: block;
 }
 
 #input {

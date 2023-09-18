@@ -32,7 +32,7 @@ function addItemDb(path, value) {
 }
 
 function inputToDb() {
-  inputHtml.addEventListener("keypress", function (event) {
+  inputHtml.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
       event.preventDefault();
 
@@ -114,25 +114,25 @@ function playSound(sound,volume) {
 
   if (sound == "add") {
     let audio = new Audio("souds/add2.wav");
-    audio.volume = volume
+    audio.volume = 0.5
     audio.play();
   }
 
   if (sound == "remove") {
     let audio = new Audio("souds/remove2.wav");
-    audio.volume = volume
+    audio.volume = 1
     audio.play();
   }
 
   if (sound == "input") {
     let audio = new Audio("souds/input.wav");
-    audio.volume = volume
+    audio.volume = 0.1
     audio.play();
   }
 
   if (sound == "inputTyping") {
     let audio = new Audio("souds/type.wav");
-    audio.volume = volume
+    audio.volume = 0.3
     audio.play();
   }
 }
