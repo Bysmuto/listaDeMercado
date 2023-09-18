@@ -36,18 +36,18 @@ function inputToDb() {
     if (event.key === "Enter") {
       event.preventDefault();
 
-      sound("add")
+      playSound("add",0.5);
 
       addItemDb(currentDb, inputHtml.value);
+    } else {
+      playSound("inputTyping",0.3);
     }
   });
 
-//input sound
-inputHtml.addEventListener("click",()=>{
-  sound("input")
-})
-
-
+  //input sound
+  inputHtml.addEventListener("click", () => {
+    playSound("input",0.08);
+  });
 }
 
 function removeItemDb(path, id) {
@@ -59,7 +59,6 @@ function removeItemDb(path, id) {
 }
 
 function displayItens(currentDb) {
-
   onValue(ref(db, currentDb), (snapshot) => {
     if (snapshot.exists()) {
       itensHtml.innerHTML = "";
@@ -76,7 +75,6 @@ function displayItens(currentDb) {
       itensHtml.innerHTML = "";
     }
   });
-  
 }
 
 function addItemHtml(value, id) {
@@ -98,11 +96,10 @@ function addItemHtml(value, id) {
       e.onclick = (e) => {
         let idOfitem = e.currentTarget.id;
         removeItemDb(currentDb, idOfitem);
-        sound("remove")
+        playSound("remove",0.5);
         console.log(idOfitem + "was removed");
       };
     });
-    
   }
 
   itemfuncs();
@@ -113,26 +110,31 @@ function runApp(db) {
   displayItens(db);
 }
 
+function playSound(sound,volume) {
 
+  if (sound == "add") {
+    let audio = new Audio("souds/add2.wav");
+    audio.volume = volume
+    audio.play();
+  }
 
+  if (sound == "remove") {
+    let audio = new Audio("souds/remove2.wav");
+    audio.volume = volume
+    audio.play();
+  }
 
-function sound(sound) {
+  if (sound == "input") {
+    let audio = new Audio("souds/input.wav");
+    audio.volume = volume
+    audio.play();
+  }
 
-if(sound=="add"){
-  let addAudio = new Audio("souds/add.wav")
-  addAudio.volume = 0.5
-  addAudio.play()
-}
-if(sound=="remove"){
-  let addAudio = new Audio("souds/remove2.wav")
-  addAudio.play()
-}
-if(sound=="input"){
-  let addAudio = new Audio("souds/input.wav")
-  addAudio.volume = 0.2
- 
-  addAudio.play()
-}
+  if (sound == "inputTyping") {
+    let audio = new Audio("souds/type.wav");
+    audio.volume = volume
+    audio.play();
+  }
 }
 
 runApp(currentDb);
