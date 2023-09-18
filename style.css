@@ -31,12 +31,7 @@ body {
   border-radius: 0px 0px 40px 40px;
 }
 
-#title {
-  font-size: 200%;
-}
-
-#title img
-{
+#title img {
   width: 70%;
   margin: auto;
   display: block;
